@@ -1,0 +1,34 @@
+User Schema-------------------------------------------------------
+__
+username: {
+            type: String
+        },
+    password: {
+        type: String
+    },
+    profilePic:{
+        type:String
+    },
+    _id: {
+         type:String
+    }
+Message Schema-------------------------------
+message: {
+        type: String
+    },
+  userId: {
+        type: String
+    },
+ commentId: {
+        type:String
+    },
+  _id: {
+         type:String
+    }
+Comment Schema..............................
+comment: {
+        type: String
+    },
+     _id: {
+         type:String
+    }
