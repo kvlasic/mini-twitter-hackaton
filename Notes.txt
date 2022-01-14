@@ -10,7 +10,7 @@ DO NOT COPY THE DESIGN OF THIS SCREENSHOT !!! THIS IS AN EXAMPLE ONLY 😅
 (Yes, it’s all caps, because every crossover, we have students who think they have to replicate this exact design 🤦‍♂️)
 
 To-Do
-– Refactor mock data with which we can work. 
+– Generate new mock data with the new schema 
 – Messages: Clarify if we can use the timestamp as ID for a single message or if the schema needs another kind of unique ID
 – Routing system: Have a look at this sandbox maybe it's usefull https://codesandbox.io/s/useparams-useeffect-usestate-tcfzg?file=/src/App.js:0-23
 – Define components and visualize them with mock data
@@ -32,7 +32,10 @@ Dedicated page structure
 Searchbar
 – Where should it be?
 
+Sidebar (optional)
+– Mock UI elements 
+
 Optional
-– Lazyloading messages (intersection observer, suspense, lazy)
+– Lazyloading messages (intersectionobserver, suspense, lazy, pagination)
 – one page to display all the users
 – a fake page/modal to sign up/login (no real functionality, for now!)
