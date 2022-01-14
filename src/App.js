@@ -1,11 +1,12 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import MainPage from "./Components/MainPage";
 import { Link, Routes, Route, useParams } from "react-router-dom";
+import MainPage from "./Components/MainPage";
+import Tweets from "./Components/Tweets"
 
 function App() {
   const [users, setUsers] = useState({});
-  const [messages, setMessages] = useState({});
+  const [messages, setMessages] = useState([]); // Array with objects therefore [] and NOT {}
 
   const fakeUserData = [
     {
@@ -62,105 +63,46 @@ function App() {
 
   const fakeMessageData = [
     {
-      message:
-        "mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero",
-      userId: "2047025443",
-    },
-    {
-      message:
-        "curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere",
-      userId: "2086618433",
-    },
-    {
-      message:
-        "eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing",
-      userId: "7926494666",
-    },
-    {
-      message:
-        "pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam",
-      userId: "9303024672",
-    },
-    {
-      message: "morbi odio odio elementum eu interdum eu tincidunt in leo",
-      userId: "6612757892",
-    },
-    {
-      message:
-        "vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat",
-      userId: "2328038352",
-    },
-    {
-      message:
-        "vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla",
-      userId: "5446844718",
-    },
-    {
-      message:
-        "libero rutrum ac lobortis vel dapibus at diam nam tristique tortor eu pede",
-      userId: "4251927478",
-    },
-    {
-      message:
-        "nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec",
-      userId: "7562613745",
-    },
-    {
-      message:
-        "integer ac leo pellentesque ultrices mattis odio donec vitae nisi",
-      userId: "0040411869",
-    },
-    {
-      message:
-        "amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi",
-      userId: "9794701815",
-    },
-    {
-      message:
-        "nunc donec quis orci eget orci vehicula condimentum curabitur in",
-      userId: "9092332526",
-    },
-    {
-      message:
-        "tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula",
-      userId: "9265098783",
-    },
-    {
-      message:
-        "consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat",
-      userId: "6944619075",
-    },lol
-    {
-      message:
-        "viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et",
-      userId: "6205237105",
-    },
-    {
-      message:
-        "sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut",
-      userId: "4407763027",
-    },
-    {
-      message:
-        "vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere",
-      userId: "6789310606",
-    },
-    {
-      message:
-        "vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit",
-      userId: "0035054182",
-    },
-    {
-      message:
-        "morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor",
-      userId: "3062670479",
-    },
-    {
-      message:
-        "lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada",
-      userId: "2994142287",
-    },
-  ];
+    message: "blandit nam nulla integer pede justo lacinia eget tincidunt",
+    user: "aglasson0",
+    timestamp: 1636264561000
+  }, {
+    message: "platea dictumst morbi vestibulum velit id pretium iaculis diam erat",
+    user: "ipickle1",
+    timestamp: 1612800299000
+  }, {
+    message: "nec nisi vulputate nonummy maecenas tincidunt lacus at velit",
+    user: "pdehooch2",
+    timestamp: 1607779693000
+  }, {
+    message: "in felis eu sapien cursus",
+    user: "bbeal3",
+    timestamp: 1606047117000
+  }, {
+    message: "pede morbi porttitor lorem id",
+    user: "btrain4",
+    timestamp: 1616909416000
+  }, {
+    message: "vestibulum eget vulputate ut ultrices vel augue",
+    user: "bfinnimore5",
+    timestamp: 1613375434000
+  }, {
+    message: "habitasse platea dictumst morbi vestibulum velit id pretium",
+    user: "dredman6",
+    timestamp: 1619834337000
+  }, {
+    message: "non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla",
+    user: "rendersby7",
+    timestamp: 1629468154000
+  }, {
+    message: "id pretium iaculis diam erat fermentum justo nec condimentum neque",
+    user: "gtotaro8",
+    timestamp: 1627308866000
+  }, {
+    message: "vitae mattis nibh ligula nec sem duis",
+    user: "tcrowcum9",
+    timestamp: 1611394360000
+  }]
 
   const fakeComments = [
     {
@@ -214,22 +156,22 @@ function App() {
     },
   ];
 
-  setUsers(fakeUserData);
+  useEffect(() => {
+    setMessages(fakeMessageData)
+  },[])
+
+  // setUsers(fakeUserData);
+  // setMessages(fakeMessageData)
 
   return (
     <div className="App">
-      <Sidebar />
-      <Message />
-      <Searchbar />
-      <User users={users} />
+    <Link to="/" >Home</Link>
       <Routes>
-        <Route exact path="/" />
-        <Route path="/message/:id" element={<Message />} />
+        <Route path="/" element={<MainPage messages={messages} />}/>
+        <Route path="/tweet/:id" element={<Tweets key={messages.timestamp} messages={messages} />} />
       </Routes>
     </div>
   );
 }
 
 export default App;
-
-// https://twitter.com/wongmjane/status/1481698469031325698
