@@ -4,7 +4,7 @@ import {Link, useParams} from "react-router-dom"
 const Tweets = ({messages}) => {
     const {id} = useParams()
 
-    const thisTweet = messages && messages.find((e) => e.timestamp === parseInt(id, 10));
+    const thisTweet = messages && messages.find((e) => e._id === parseInt(id, 10));
     // == and not === because
     console.log('this article', thisTweet);
 
