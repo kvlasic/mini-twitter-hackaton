@@ -15,6 +15,7 @@ To-Do
 – Routing system: Have a look at this sandbox maybe it's usefull https://codesandbox.io/s/useparams-useeffect-usestate-tcfzg?file=/src/App.js:0-23
 – Define components and visualize them with mock data
 – Replace favicon and logo
+– Bootstrap?
  
 Let's split up?
 Maybe it's better to split up and work on the single components to have some basic visual appearance.
@@ -25,14 +26,19 @@ Main page structure
 – Main containter with message feed (rename message component?)
 – Searchbar on the right
 
-Dedicated page structure 
+Dedicated page / message page structure 
 – Show the single message
-– Maybe not to run into the layout trap: 
+--- Including: username, user thumbnail image, message text, date (posted on)
+– Maybe not to run into the layout trap: don't rebuild the app! 
 
 Searchbar
 – Where should it be?
 
-Sidebar (optional)
+Sidebar 
+– user information about the current user shown when a message is clicked
+– when no message was clicked there must be default content 
+
+Sidebar 
 – Mock UI elements 
 
 Optional
