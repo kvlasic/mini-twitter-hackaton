@@ -3,8 +3,10 @@ import logo from "../bird.png"
 
 export const Home = () => {
     return (
-        <div>
-            <img src={logo} alt="logo"/>
-        </div>
+            <nav className="navbar-brand">
+              <img src={logo} width="40" height="40" className="d-inline-block align-top" alt=""/>
+            </nav>
     )
 }
+
+export default Home;
