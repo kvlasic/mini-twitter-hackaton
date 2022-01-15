@@ -7,13 +7,11 @@ const Tweets = ({messages}) => {
     // console.log(messages)
     const thisTweet = messages && messages.find((tweet) => tweet._id === id);
     // == and not === because
-    console.log('this article', thisTweet);
+    // console.log('this article', thisTweet);
 
     return (
-                <Card>
-                    <Card.Body>
-                    Message: {thisTweet.message} <br/>
-                    from User: {thisTweet.userId}<br/>
+                <Card className="tweet">
+                    <Card.Body>{thisTweet.message} <br/>
                     <Link to="/" >Back to Mainpage</Link>
                     </Card.Body>
                 </Card>
@@ -23,18 +21,3 @@ const Tweets = ({messages}) => {
 export default Tweets
 
 
-// <Tweets key={messages._id} messages={messages} />
-
-//             <b>Message: {thisTweet.message}</b><br/>
-// <b>from User: {thisTweet.userId}</b>   
-
-/*
-
-    return (
-        <div className="tweet">
-        <p>Here comes the original message</p>
-            <b>Message: </b><br/>
-            <b>from User: </b>        
-        </div>
-    )
-*/ 

@@ -47,7 +47,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage messages={messages} users={users} />}/>
         <Route path="/messages/:id" element={<Tweet messages={messages} />} />
-      </Routes>
+        </Routes>
       </Col>
       <Col sm={3}>
         <Searchbar />

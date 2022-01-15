@@ -1,13 +1,12 @@
 import React from "react";
 import {Link} from "react-router-dom"
 import { Card, Form } from "react-bootstrap";
-import {Searchbar} from "./Searchbar";
 
 
 const MainPage = ({messages, users}) => {
 
   // const thisUser = users && users.find((user) => user._id === message.userId);
-  console.log(messages.map(m => m._id));
+  //console.log(messages.map(m => m._id));
   // it message.user === user._id then show user.profilPic
   return (
   <div className="main">
@@ -26,7 +25,7 @@ const MainPage = ({messages, users}) => {
         return <Link key={tweet._id} className="tweet__link" to={`/messages/${tweet._id}`}>
                 <Card key={tweet._id}>
                   <Card.Body>
-                    {<img src={image} width="40" className="user_thumbnail"/>}
+                    {<img src={image} width="40" className="user_thumbnail" alt=""/>}
                   {tweet.message}
                   </Card.Body>
                 </Card>

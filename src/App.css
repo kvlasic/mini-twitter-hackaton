@@ -38,7 +38,9 @@
   }
 }
 
-
+.tweet {
+  text-align: left;
+}
 .tweet__link {
   color:inherit;
   text-decoration: none;
