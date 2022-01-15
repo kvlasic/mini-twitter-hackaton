@@ -1,0 +1,47 @@
+Main goals
+– A main page with all the messages
+– A dedicated page for each message
+– A sidebar with information about the current user
+– A routing system
+– A search bar to be able to filter the posts by date, user or some word inside the message
+
+Notes from the slides:
+DO NOT COPY THE DESIGN OF THIS SCREENSHOT !!! THIS IS AN EXAMPLE ONLY 😅
+(Yes, it’s all caps, because every crossover, we have students who think they have to replicate this exact design 🤦‍♂️)
+
+To-Do
+✅ Generate new mock data with the new schema 
+✅ Messages: Clarify if we can use the timestamp as ID for a single message or if the schema needs another kind of unique ID
+✅ Routing system: Have a look at this sandbox maybe it's usefull https://codesandbox.io/s/useparams-useeffect-usestate-tcfzg?file=/src/App.js:0-23
+✅ Bootstrap (Documentation see here https://react-bootstrap.github.io/getting-started/introduction)
+– Define components and visualize them with mock data
+– Replace favicon and logo
+ 
+Let's split up?
+Maybe it's better to split up and work on the single components to have some basic visual appearance.
+
+Main page structure
+– Set a logo to go back to the main page
+– Sidebar left with user information
+– Main containter with message feed (rename message component?)
+– Searchbar on the right
+
+Dedicated page / message page structure 
+– Show the single message
+--- Including: username, user thumbnail image, message text, date (posted on)
+– Maybe not to run into the layout trap: don't rebuild the app! 
+
+Searchbar
+– Where should it be? --> on top above the right sidebar
+
+Sidebar (right)
+– user information about the current user shown when a message is clicked
+– when no message was clicked there must be default content 
+
+Sidebar / Navgation bar (left)
+– Mock UI elements 
+
+Optional
+– Lazyloading messages (intersectionobserver, suspense, lazy, pagination)
+– one page to display all the users
+– a fake page/modal to sign up/login (no real functionality, for now!)
