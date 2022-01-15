@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin-top: 1rem;
 }
 
 .App-logo {
@@ -39,5 +40,21 @@
 
 
 .tweet__link {
+  color:inherit;
+  text-decoration: none;
   cursor: pointer;
+  text-align:left;
+}
+
+.tweet__link .card {
+  margin-bottom:0.5em;
+}
+
+.user_thumbnail {
+  float:left;
+  margin-right: 6px;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
 }

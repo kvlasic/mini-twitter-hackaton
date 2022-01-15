@@ -1,31 +1,38 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {Link} from "react-router-dom"
-import { Container, Row, Col } from "react-bootstrap";
-import { Home } from "./Home";
+import { Card, Form } from "react-bootstrap";
+import {Searchbar} from "./Searchbar";
 
 
-const MainPage = ({messages}) => {
-  
+const MainPage = ({messages, users}) => {
 
+  // const thisUser = users && users.find((user) => user._id === message.userId);
+  console.log(messages.map(m => m._id));
+  // it message.user === user._id then show user.profilPic
   return (
   <div className="main">
-  <Container>
-  <Row>
-    <Col sm={3}>left sidebar</Col>
-    <Col sm={6}>
     <div className="feed">
-      {messages.map((message) => {
-        return <Link key={message._id} className="tweet__link" to={`/messages/${message._id}`}>
-                <article key={message._id}>{message.message}</article>
+      <Form>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Control type="text" placeholder="Write something ..." />
+          <Form.Text className="text-muted"></Form.Text>
+        </Form.Group>
+      </Form>
+      {messages.length && users.length && messages.map((tweet) => {
+        const user = users.find(u => u._id === tweet.user);
+        let image = "";
+        user && user.profilPic ? image = user.profilPic : image = 'https://avatars.githubusercontent.com/u/3663537?v=4'
+        
+        return <Link key={tweet._id} className="tweet__link" to={`/messages/${tweet._id}`}>
+                <Card key={tweet._id}>
+                  <Card.Body>
+                    {<img src={image} width="40" className="user_thumbnail"/>}
+                  {tweet.message}
+                  </Card.Body>
+                </Card>
               </Link>
       })}
     </div>
-    </Col>
-    <Col sm={3}>right Sidebar</Col>
-    
-  </Row>
-
-</Container>
     <div className="sidebar"></div>
   </div>
   )

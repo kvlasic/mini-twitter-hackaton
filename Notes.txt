@@ -15,19 +15,19 @@ To-Do
 ✅ Routing system: Have a look at this sandbox maybe it's usefull https://codesandbox.io/s/useparams-useeffect-usestate-tcfzg?file=/src/App.js:0-23
 ✅ Bootstrap (Documentation see here https://react-bootstrap.github.io/getting-started/introduction)
 – Define components and visualize them with mock data
-– Replace favicon and logo
+✅ Replace favicon and logo
  
 Let's split up?
 Maybe it's better to split up and work on the single components to have some basic visual appearance.
 
 Main page structure
-– Set a logo to go back to the main page
+✅ Set a logo to go back to the main page
 – Sidebar left with user information
-– Main containter with message feed (rename message component?)
+✅ Main containter with message feed (rename message component?)
 – Searchbar on the right
 
 Dedicated page / message page structure 
-– Show the single message
+✅ Show the single message
 --- Including: username, user thumbnail image, message text, date (posted on)
 – Maybe not to run into the layout trap: don't rebuild the app! 
 
